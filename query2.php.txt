@@ -1,0 +1,59 @@
+
+<?php
+
+$csvString = $_GET['csvstring'];
+
+$maxlevel = $_GET['maxscore'];
+
+$user_id = $_GET['user_id'];
+
+$con = mysql_connect("localhost", "nickjwil_bill", "alltimelow1");
+
+mysql_select_db("nickjwil_bananabill", $con);
+
+$sql = "DELETE FROM maxscores WHERE user_id = '" . $user_id . "'";
+
+mysql_query($sql);
+
+$sql = "INSERT INTO maxscores (user_id, maxscore) VALUES ('" . $user_id . "', " . $maxlevel . ")";
+
+mysql_query($sql);
+
+$stringArray = explode(",", $csvString);
+
+$count = 0;
+
+$newcsv = "dummy";
+
+foreach ($stringArray as $this_user) {
+
+	$sql = "SELECT * FROM maxscores WHERE user_id = '" . $this_user . "'";
+
+	$results = mysql_query($sql);
+
+	if (mysql_num_rows($results) > 0) {
+
+	$resultArr = mysql_fetch_array($results);
+
+	if ($newcsv == "dummy") $newcsv = $resultArr['maxscore'];
+
+	else $newcsv = $newcsv . "," . $resultArr['maxscore'];
+
+	}
+
+	else {
+
+		if ($newcsv == "dummy") $newcsv = rand(1,20);
+
+		else $newcsv = $newcsv . "," . rand(1,20);
+
+
+	}
+
+	$count++;
+
+}
+
+echo($newcsv);
+
+?>

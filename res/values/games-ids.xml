@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Google Play game services IDs.
+Save this file as res/values/games-ids.xml in your project.
+-->
+<resources>
+  <string name="app_id">1084346886636</string>
+  <string name="achievement_tutorial_completed">CgkI7NPxwMcfEAIQAQ</string>
+  <string name="achievement_dodged_attila">CgkI7NPxwMcfEAIQAg</string>
+  <string name="achievement_beat_level_one">CgkI7NPxwMcfEAIQAw</string>
+  <string name="achievement_mauled_by_attila">CgkI7NPxwMcfEAIQBA</string>
+  <string name="achievement_first_three_stars">CgkI7NPxwMcfEAIQBQ</string>
+</resources>
+

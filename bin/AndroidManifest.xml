@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.projectgrapevine.bananabill"
+    android:versionCode="13"
+    android:versionName="1.1.5" >
+    
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="18" />
+
+    <application
+        android:allowBackup="true"
+        android:largeHeap="true"
+        android:icon="@drawable/bananabillicon2"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        
+        <meta-data android:name="com.google.android.gms.version"
+               android:value="@integer/google_play_services_version"/>
+        
+        <meta-data android:name="com.google.android.gms.games.APP_ID"
+        android:value="@string/app_id" />
+   <meta-data android:name="com.google.android.gms.version"
+       android:value="@integer/google_play_services_version"/>
+        
+        <activity android:name="com.google.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+        
+        <activity
+            android:name="com.projectgrapevine.bananabill.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait"
+            android:noHistory="false" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.projectgrapevine.bananabill.GamePlay"
+            android:label="@string/title_activity_game_play"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.projectgrapevine.bananabill.LevelSelect"
+            android:label="@string/title_activity_level_select"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.projectgrapevine.bananabill.HighScores"
+            android:label="@string/title_activity_high_scores"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait" >
+        </activity>
+        
+        <activity
+            android:name="com.projectgrapevine.bananabill.BillSocial"
+            android:label="BillSocial"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <service android:name="com.projectgrapevine.bananabill.BackgroundMusicService" >
+        </service>
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/app_id"/>
+        <activity android:name="com.facebook.LoginActivity"></activity>
+
+        <activity android:name="com.google.android.gms.ads.AdActivity"
+             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+          
+    </application>
+
+</manifest>
